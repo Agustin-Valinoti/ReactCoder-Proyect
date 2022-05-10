@@ -1,5 +1,6 @@
 import CartWidget from "./CartWidget";
 import {Link} from 'react-router-dom'
+import useCartContext from "../store/CartContext";
 
 function NavBar() {
   return (
@@ -65,9 +66,9 @@ function NavBar() {
               />
             </svg>
           </button>
-          <button class="btn btn-ghost btn-circle">
+          <Link to="/cart" class="btn btn-ghost btn-circle">
             <CartWidget/>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -15,6 +15,8 @@ function getCars (id) {
 }
 
 function ItemDetailContainer() {
+  
+
   const [car, setCar] = useState([])
   const {carid} = useParams()
 

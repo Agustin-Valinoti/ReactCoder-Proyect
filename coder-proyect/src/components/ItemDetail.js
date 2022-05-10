@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import ItemCounter from './ItemCounter'
+import useCartContext from '../store/CartContext'
 
 function ItemDetail({cars}) {
+  const [inCart, setInCart] = useState(false)
+  const {addToCart} = useCartContext();
+
+  function onAdd(count) {
+    setInCart(true)
+    addToCart(cars, count)
+    console.log('Agregado al Cart:', cars, count);
+  }
+
   return (
     <div className='flex flex-col m-5 p-12 border-2 rounded-lg backdrop-sepia'>
         <div className='pb-5'>
@@ -10,7 +21,11 @@ function ItemDetail({cars}) {
             <img className='w-48 pb-2' src={cars.img} alt='Product Image' />
             <h3>USD ${cars.price}</h3>      
         </div>
-        <ItemCounter stock={cars.stock} initial={1}/>
+        {inCart ? 
+          <Link to='/cart'>Ir al Carrito</Link>
+           : 
+          <ItemCounter onAdd={onAdd} stock={cars.stock} initial={1}/>
+        }
     </div>
   )
 }

@@ -15,6 +15,10 @@ function ItemCounter (props) {
         setCount(count - 1)}
     }
     
+    function handleClick(){
+      props.onAdd(count)
+    }
+
   return (
       <>
     <div className='flex flex-col text-center'>
@@ -25,7 +29,7 @@ function ItemCounter (props) {
         <button onClick={addHandler} className='border rounded-md px-1 py-1 hover:bg-amber-800'> + </button>
       </div>
       <div>
-          <button className='border-2 rounded-3xl px-8 py-2 hover:bg-amber-800'> Agrega al Carrito </button>
+          <button onClick={handleClick} className='border-2 rounded-3xl px-8 py-2 hover:bg-amber-800'> Agrega al Carrito </button>
       </div>
 
     </div>
