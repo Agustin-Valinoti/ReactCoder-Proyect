@@ -18,7 +18,7 @@ function App() {
               element={<ItemListContainer />}
             />
             <Route path="/car/:carid" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<CartPage/>}/>
+            <Route path="/cart" element={<CartPage />}/>
           </Routes>
         </Router>
       </CCProvider>

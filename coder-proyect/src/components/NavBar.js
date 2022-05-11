@@ -41,6 +41,9 @@ function NavBar() {
                 <Link to="/category/Pontiac">Pontiac</Link>
               </li>
               <li>
+                <Link to="/category/Lexus">Lexus</Link>
+              </li>
+              <li>
                 <Link to="/category/Mercedes-Benz">Mercedes-Benz</Link>
               </li>
             </ul>

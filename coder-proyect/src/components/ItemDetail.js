@@ -10,7 +10,6 @@ function ItemDetail({cars}) {
   function onAdd(count) {
     setInCart(true)
     addToCart(cars, count)
-    console.log('Agregado al Cart:', cars, count);
   }
 
   return (
@@ -18,11 +17,13 @@ function ItemDetail({cars}) {
         <div className='pb-5'>
             <h1 className='pb-2 text-2xl'>{cars.brand}</h1>
             <p className='pb-2'>{cars.model}, {cars.year}</p>
-            <img className='w-48 pb-2' src={cars.img} alt='Product Image' />
+            <img className='w-48 pb-2 max-w-xs hover:shadow-lg transition duration-300 ease-in-out'
+                 src={cars.img} alt='Product Image' 
+                 />
             <h3>USD ${cars.price}</h3>      
         </div>
         {inCart ? 
-          <Link to='/cart'>Ir al Carrito</Link>
+          <Link className='hover:text-indigo-700' to='/cart'>Ir al Carrito</Link>
            : 
           <ItemCounter onAdd={onAdd} stock={cars.stock} initial={1}/>
         }

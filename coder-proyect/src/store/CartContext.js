@@ -8,23 +8,39 @@ export function CCProvider({children}) {
     const [cart, setCart] = useState([])
     
     const addToCart = (item, cant) => {
-        const newItem = {...item, cant}
-        setCart([...cart, newItem]);
+        if (intoCart(item.id)) {
+           const newCart = cart.map(cartItem => {
+                if (cartItem.id === item.id) {
+                   const copyItem = {...cartItem}
+                   copyItem.cant += cant;
+                   return copyItem
+                }
+            })
+            setCart(newCart)
+        } else {
+            const newItem = {...item, cant}
+            setCart([...cart, newItem]);
+        }
     }
 
-    // const removeToCart = (item) => {
-    //     const newCart = [...cart]
-    //     const cartFilter = newCart.filter( item => {
-    //         return item.id !== id;
-    //     })
-    //     setCart(cartFilter)
-    // }
+    const intoCart = (id) => {
+        return cart.some( cartItem => cartItem.id === id) 
+    }
+    
+    const removeFromCart = (id) => {
+        const newCart = [...cart]
+        const cartFilter = newCart.filter( item => {
+            return item.id !== id;
+        })
+        setCart(cartFilter)
+    }
 
-    const clearCart = (item) => {
-        const emptyCart = () => {}
+    const clearCart = () => {
+        const emptyCart = []
+        setCart(emptyCart)
     }
     return (
-        <CartContext.Provider value={{cart, addToCart}}>
+        <CartContext.Provider value={{cart, addToCart, clearCart, removeFromCart}}>
             {children}
         </CartContext.Provider>
     )
