@@ -27,6 +27,12 @@ export function CCProvider({children}) {
         return cart.some( cartItem => cartItem.id === id) 
     }
     
+    const totalCant = () => {
+        let total = 0
+        cart.forEach(item => total += item.cant ) 
+        return total;
+    }
+
     const removeFromCart = (id) => {
         const newCart = [...cart]
         const cartFilter = newCart.filter( item => {
@@ -40,7 +46,7 @@ export function CCProvider({children}) {
         setCart(emptyCart)
     }
     return (
-        <CartContext.Provider value={{cart, addToCart, clearCart, removeFromCart}}>
+        <CartContext.Provider value={{cart, addToCart, clearCart, removeFromCart, totalCant, intoCart}}>
             {children}
         </CartContext.Provider>
     )

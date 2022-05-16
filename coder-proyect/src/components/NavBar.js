@@ -1,8 +1,8 @@
 import CartWidget from "./CartWidget";
 import {Link} from 'react-router-dom'
-import useCartContext from "../store/CartContext";
 
 function NavBar() {
+
   return (
     <div className='border-double border-b-2'>
       <div class="navbar bg-base-100">

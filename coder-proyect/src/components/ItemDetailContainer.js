@@ -10,14 +10,14 @@ function getCars (id) {
         return Number(id) === car.id
       })
       resolve(carFound)
-    }, 1000)
+    }, 2500)
   })
 }
 
 function ItemDetailContainer() {
   
 
-  const [car, setCar] = useState([])
+  const [car, setCar] = useState()
   const {carid} = useParams()
 
   useEffect(() => {
