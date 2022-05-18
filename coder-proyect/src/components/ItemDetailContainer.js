@@ -1,27 +1,15 @@
-import data from '../data/data.json'
+import { getItem as getProduct } from '../data/dbase'
 import {useEffect, useState} from 'react'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 
-function getCars (id) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const carFound = data.find((car) => {
-        return Number(id) === car.id
-      })
-      resolve(carFound)
-    }, 2500)
-  })
-}
-
 function ItemDetailContainer() {
   
-
   const [car, setCar] = useState()
   const {carid} = useParams()
 
   useEffect(() => {
-    getCars(carid).then(resPromise => {
+    getProduct(carid).then(resPromise => {
       setCar(resPromise)
     })
   },[carid])

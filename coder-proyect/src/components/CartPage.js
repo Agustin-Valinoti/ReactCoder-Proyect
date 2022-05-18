@@ -14,32 +14,61 @@ function CartPage() {
     const totalPrice = item.cant * item.price;
 
     return (
-      <li key={cart.id}>
-        <Link className="hover:text-indigo-700" to={`/car/${item.id}`}>
-          {" "}
-          <span>
-            {item.brand} {item.model}{" "}
-          </span>{" "}
-        </Link>
-        <span>x {item.cant} = </span>
-        <span>USD ${totalPrice}</span>
-        <DeleteButton onSubstract={onSubstract} />
-      </li>
-    );
-  });
+      <div class="overflow-x-auto">
+  <table class="table w-full">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody className="text-left">
+      <tr key={cart.id}>
+        <th>•</th>
+        <td className=""> 
+         <Link className="btn btn-link w-36" to={`/car/${item.id}`}> 
+           <span>
+             {item.brand} {item.model}
+           </span>
+         </Link>
+        </td>
+        <td>{item.cant}</td>
+        <td>${totalPrice}</td>
+        <td><DeleteButton onSubstract={onSubstract}/></td>
+      </tr>    
+    </tbody>
+  </table>
+</div>)});
+
+//       <li key={cart.id}>
+//         <Link className="btn btn-link" to={`/car/${item.id}`}>
+//           {" "}
+//           <span>
+//             {item.brand} {item.model}{" "}
+//           </span>{" "}
+//         </Link>
+//         <span>x {item.cant} = </span>
+//         <span>USD ${totalPrice}</span>
+//         <DeleteButton onSubstract={onSubstract} />
+//       </li>
+//     );
+//   });
 
   if (cart.length === 0) {
     return (
       <div className="text-center">
         <h3 className="mt-32">No has agregado productos</h3>
         <Link className="absolute mb-16 inset-x-0 bottom-0" to="/">
-          <button class="btn btn-wide">Volver al Inicio</button>
+          <button data-theme="emerald" class="btn btn-wide">Volver al Inicio</button>
         </Link>
       </div>
     );
   } else {
     return (
-      <div>
+      <div data-theme="emerald">
         <div>
           <ul>{cartPrint}</ul>
         </div>
