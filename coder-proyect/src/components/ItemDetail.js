@@ -13,11 +13,11 @@ function ItemDetail({ cars }) {
 
   if (cars === undefined) {
     return <Spinner />;
-  } else {
+  } else if (cars.type !== 'vehicle') {
     return (
       <div data-theme="emerald" class="card w-96 bg-base-100 shadow-xl">
         <figure>
-          <img src={cars.imgUrl} alt="Product Image" />
+          <img src={cars.img} alt="Product Image" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">
@@ -39,7 +39,23 @@ function ItemDetail({ cars }) {
         </div>
       </div>
     );
-  }
+  } else {
+    return (
+    <div data-theme="emerald" class="card w-96 bg-base-100 shadow-xl">
+    <figure>
+      <img src={cars.img} alt="Product Image" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">
+        {cars.brand} {cars.model}
+      </h2>
+      <p>${cars.price}</p>
+      <div class="card-actions justify-end">
+        <button className="btn btn-ghost"> CONTACTANOS </button>
+      </div>
+    </div>
+  </div>
+  )}
 }
 
 export default ItemDetail;

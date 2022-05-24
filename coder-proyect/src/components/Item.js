@@ -5,7 +5,7 @@ function Item({ car }) {
   return (
     <div data-theme="emerald" className="card w-96 bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
-        <img className="" src={car.imgUrl} alt="Product Image" />
+        <img className="" src={car.img} alt="Product Image" />
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">

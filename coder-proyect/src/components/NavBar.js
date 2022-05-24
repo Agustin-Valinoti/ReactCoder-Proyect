@@ -38,13 +38,13 @@ function NavBar() {
                 <Link to="/category/onoff">On-Off</Link>
               </li>
               <li>
-                <Link to="">Proximamente...</Link>
+                <Link to="/category/helmets">Cascos</Link>
               </li>
               <li>
-                <Link to="">Proximamente...</Link>
+                <Link to="/category/gloves">Guantes</Link>
               </li>
               <li>
-                <Link to="">Proximamente...</Link>
+                <Link to="/orders">Compras</Link>
               </li>
             </ul>
           </div>

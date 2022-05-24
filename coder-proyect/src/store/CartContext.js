@@ -45,8 +45,15 @@ export function CCProvider({children}) {
         const emptyCart = []
         setCart(emptyCart)
     }
+
+    const getTotalPrice = () => {
+        let totalPrice = 0
+        cart.forEach((item) => ( totalPrice += item.cant * item.price ))
+        return totalPrice
+    }
+    
     return (
-        <CartContext.Provider value={{cart, addToCart, clearCart, removeFromCart, totalCant, intoCart}}>
+        <CartContext.Provider value={{cart, addToCart, clearCart, removeFromCart, totalCant, intoCart, getTotalPrice}}>
             {children}
         </CartContext.Provider>
     )

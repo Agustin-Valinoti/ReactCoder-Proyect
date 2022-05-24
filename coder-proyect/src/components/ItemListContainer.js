@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import {getAllItems as getProducts, getItemByCategory} from '../data/dbase'
+import {getAllItems as getProducts, getItemByCategory, dataToFirebase} from '../data/dbase'
 
 
 function ItemListContainer() {
