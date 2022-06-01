@@ -11,16 +11,15 @@ import {
   setDoc,
   addDoc
 } from "firebase/firestore/lite";
-import swal from "sweetalert";
 import { products } from "./data";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB3JkGomds5GEvgvHoV8irx8PDtIXU9kO8",
-  authDomain: "coder-agusvalinoti.firebaseapp.com",
-  projectId: "coder-agusvalinoti",
-  storageBucket: "coder-agusvalinoti.appspot.com",
-  messagingSenderId: "120265223245",
-  appId: "1:120265223245:web:5bc6e0155ccca1be96c004",
+  apiKey:process.env.REACT_APP_APIKEY,
+  authDomain:process.env.REACT_APP_AUTHDOMAIN,
+  projectId:process.env.REACT_APP_PROJECTID,
+  storageBucket:process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId:process.env.REACT_APP_MESSAGINGSENDERID,
+  appId:process.env.REACT_APP_APPID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -91,6 +90,6 @@ export async function createBuyOrder(orderData){
 
     const myCollection = collection (fireStoreDB, "finishOrders")
     const orderDoc = await addDoc(myCollection, orderWithDate) 
-
-    return swal(`¡Muchas gracias por la confianza! Su orden de compra es:  ${orderDoc.id}`); 
+    
+    return orderDoc ;
 }

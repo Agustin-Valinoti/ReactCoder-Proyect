@@ -51,7 +51,7 @@ function ItemDetail({ cars }) {
       </h2>
       <p>${cars.price}</p>
       <div class="card-actions justify-end">
-        <button className="btn btn-ghost"> CONTACTANOS </button>
+        <Link to="/contact" className="btn btn-ghost"> CONTACTANOS </Link>
       </div>
     </div>
   </div>

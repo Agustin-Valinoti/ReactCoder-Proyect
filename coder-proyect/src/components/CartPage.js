@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useCartContext from "../store/CartContext";
 import DeleteButton from "./DeleteButton";
 import { createBuyOrder } from "../data/dbase";
+import Checkout from "./Checkout";
 
 function CartPage() {
   const { clearCart, cart, removeFromCart, getTotalPrice } = useCartContext();
@@ -58,43 +59,31 @@ function CartPage() {
       </div>
     );
   } else {
-    const finishCart = () => {
-      const itemBuy = cart.map((item) => ({
-        id: item.id,
-        brand: item.brand,
-        model: item.model,
-        price: item.price,
-        cant: item.cant,
-      }));
-      const buyOrder = {
-        buyer: {
-          name: "Coderhouse",
-          phone: 3511234567,
-          email: "coder@gmail.com",
-        },
-        items: itemBuy,
-        total: getTotalPrice(),
-      };
-      createBuyOrder(buyOrder).then(clearCart)
-    };
-
     return (
       <div data-theme="emerald">
         <div>
           <ul>{cartPrint}</ul>
         </div>
         <div className="absolute inset-x-0 bottom-0">
-          <button
-            for="my-modal"
-            onClick={finishCart}
-            className="
-           mb-2 w-full inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-normal
-           uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg
-           focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out
-           "
-          >
-              FINALIZAR COMPRA         
-          </button>
+          <a href="#checkmodal">
+            <button
+              className="
+            mb-2 w-full inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-normal
+            uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg
+            focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out
+            "
+            >
+              FINALIZAR COMPRA
+            </button>
+          </a>
+          <div className="modal" id="checkmodal">
+            <div className="flex flex-col modal-box">
+              <h3 className="font-bold ml-4">
+                Ingresa los siguientes datos para finalizar tu compra.
+              </h3>
+              <Checkout />
+            </div>
+          </div>
           <button
             onClick={clearCart}
             className="
