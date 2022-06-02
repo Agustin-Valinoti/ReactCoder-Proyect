@@ -26,6 +26,7 @@ function Checkout() {
       const buyOrder = {
         buyer: {
           name: name.value,
+          lastname: lastName.value,
           email: mail.value,
           dni: dniNumber.value,
         },
