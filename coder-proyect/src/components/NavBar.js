@@ -4,11 +4,11 @@ import {Link} from 'react-router-dom'
 function NavBar() {
 
   return (
-    <div data-theme="forest" className='border-double border-b-2'>
+    <div data-theme="lemonade" className='border-double border-b-2'>
       <div class="navbar bg-base-100">
         <div class="navbar-start">
           <div class="dropdown">
-            <label tabindex="0" class="btn btn-primary btn-circle">
+            <label tabindex="0" class="btn btn-ghost btn-circle">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -50,10 +50,10 @@ function NavBar() {
           </div>
         </div>
         <div class="navbar-center">
-          <Link to="/" class="btn btn-primary normal-case text-xl">NaKed World</Link>
+          <Link to="/" class="font-bold normal-case text-4xl box-decoration-clone bg-gradient-to-r from-lime-600 to-teal-900 text-white px-2 rounded">NaKed World</Link>
         </div>
         <div class="navbar-end">
-          <Link to="/cart" class="btn btn-primary btn-circle">
+          <Link to="/cart" class="btn btn-ghost btn-circle">
             <CartWidget/>
           </Link>
         </div>

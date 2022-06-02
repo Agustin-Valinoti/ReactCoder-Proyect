@@ -1,16 +1,16 @@
 import React from "react";
 
-function Inputs( { label, placeholder, htmlfor, id, type, state, setState, validation } ) {
+function Inputs( { label, placeholder, htmlfor, id, type, state, changeState, validation } ) {
   const change = (e) => {
-    setState( {...state, value: e.target.value} )
+    changeState( {...state, value: e.target.value} )
   }
 
   const validate = () => {
       if(validation){
           if(validation.test(state.value)){
-            setState( {...state, valid: 'accepted'} );
+            changeState( {...state, valid: 'accepted'} );
           } else {
-            setState( {...state, valid: 'denied'} );
+            changeState( {...state, valid: 'denied'} );
           }
       }
   }

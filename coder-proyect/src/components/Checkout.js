@@ -107,7 +107,7 @@ function Checkout() {
       <form className="flex relative flex-wrap">
         <Inputs
           state={name}
-          setState={setName}
+          changeState={setName}
           label="Nombre"
           placeholder="nombre"
           type="text"
@@ -117,7 +117,7 @@ function Checkout() {
         />
         <Inputs
           state={lastName}
-          setState={setLastName}
+          changeState={setLastName}
           label="Apellido"
           placeholder="apellido"
           type="text"
@@ -127,7 +127,7 @@ function Checkout() {
         />
         <Inputs
           state={mail}
-          setState={setMail}
+          changeState={setMail}
           label="Email"
           placeholder="email"
           type="email"
@@ -137,7 +137,7 @@ function Checkout() {
         />
         <Inputs
           state={dniNumber}
-          setState={setDniNumber}
+          changeState={setDniNumber}
           label="DNI"
           placeholder="DNI"
           type="text"

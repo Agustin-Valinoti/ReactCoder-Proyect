@@ -15,7 +15,7 @@ function ItemDetail({ cars }) {
     return <Spinner />;
   } else if (cars.type !== 'vehicle') {
     return (
-      <div data-theme="emerald" class="card w-96 bg-base-100 shadow-xl">
+      <div data-theme="forest" class="card w-96 bg-base-100 shadow-xl">
         <figure>
           <img src={cars.img} alt="Product Image" />
         </figure>
@@ -41,7 +41,7 @@ function ItemDetail({ cars }) {
     );
   } else {
     return (
-    <div data-theme="emerald" class="card w-96 bg-base-100 shadow-xl">
+    <div data-theme="forest" class="card w-96 bg-base-100 shadow-xl">
     <figure>
       <img src={cars.img} alt="Product Image" />
     </figure>

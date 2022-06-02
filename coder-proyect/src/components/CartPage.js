@@ -63,7 +63,7 @@ function CartPage() {
     const handleBack = () => {
       window.history.back()
     } 
-    
+
     return (
       <div data-theme="emerald">
         <div>
@@ -82,7 +82,7 @@ function CartPage() {
             </button>
           </a>
           <div className="modal" id="checkmodal">
-            <div className="flex flex-col modal-box">
+            <div data-theme="forest" className="flex flex-col modal-box">
               <label for="checkmodal" class="btn btn-sm btn-circle absolute right-2 top-2" onClick={handleBack}>✕</label>
               <h3 className="font-bold ml-4">
                 Ingresa los siguientes datos para finalizar tu compra.
