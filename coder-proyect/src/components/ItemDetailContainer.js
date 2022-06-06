@@ -5,19 +5,19 @@ import { useParams } from 'react-router-dom'
 
 function ItemDetailContainer() {
   
-  const [car, setCar] = useState()
-  const {carid} = useParams()
+  const [product, setProduct] = useState()
+  const {productid} = useParams()
 
   useEffect(() => {
-    getProduct(carid).then(resPromise => {
-      setCar(resPromise)
+    getProduct(productid).then(resPromise => {
+      setProduct(resPromise)
     })
-  },[carid])
+  },[productid])
   
 
   return (
     <div className='flex place-content-center mt-32 p-12'>
-      <ItemDetail cars={car}/>
+      <ItemDetail products={product}/>
     </div>
   )
 }

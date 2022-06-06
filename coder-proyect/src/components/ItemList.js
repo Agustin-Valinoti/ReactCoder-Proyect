@@ -2,16 +2,16 @@ import React from 'react'
 import Spinner from './commonComponents/Spinner'
 import Item from './Item'
 
-function ItemList({cars}) {
-  if (cars === undefined) {
+function ItemList({products}) {
+  if (products === undefined) {
     return <Spinner/>
   } else {
     return (
       <div className='flex flex-wrap'>
-        {cars.map((thisCars) => {
+        {products.map((thisProd) => {
           return (
             <div className='flex place-content-center p-8'>
-                    <Item car={thisCars} key={thisCars.id} />
+                    <Item product={thisProd} key={thisProd.id} />
                 </div>
             )
           })}

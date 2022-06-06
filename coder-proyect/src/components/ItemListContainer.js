@@ -5,24 +5,24 @@ import {getAllItems as getProducts, getItemByCategory, dataToFirebase} from '../
 
 
 function ItemListContainer() {
-  const [cars, setCars] = useState();
+  const [products, setProducts] = useState();
   const { categoryid } = useParams();
 
   useEffect(() => {
     if (categoryid === undefined) {
     getProducts().then((resPromise) => {
-      setCars(resPromise);
+      setProducts(resPromise);
     });
   } else {
     getItemByCategory(categoryid).then((resPromise) => {
-      setCars(resPromise);
+      setProducts(resPromise);
     });
   }
   }, [categoryid]);
 
   return (
     <div className="flex place-content-center p-4">
-      <ItemList cars={cars} />
+      <ItemList products={products} />
     </div>
   );
 }
