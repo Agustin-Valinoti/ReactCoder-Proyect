@@ -66,21 +66,6 @@ export async function getItem(id) {
   };
 }
 
-export async function dataToFirebase() {
-    const PRODUCTS = products
-    PRODUCTS.forEach((item) => {
-    const newItem = doc(collection(fireStoreDB, "products"));
-
-    setDoc(newItem, item)
-      .then(() => {
-        console.log("Document written with ID: ", newItem.id);
-      })
-      .catch((err) => {
-        console.error("Error adding document: ", err);
-      });
-  });
-}
-
 export async function createBuyOrder(orderData){
     const buyDate = Timestamp.now()
     const orderWithDate = {

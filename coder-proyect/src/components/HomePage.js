@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import '../styles/home.css'
 
 function HomePage() {
+  
   return (
-    <div className="hero min-h-screen">
+    <div className="hero bg-fixed bg-center bg-cover min-h-screen" style={{background: "../assets.imgs"}}>
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">

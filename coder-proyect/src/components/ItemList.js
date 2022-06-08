@@ -1,12 +1,12 @@
 import React from "react";
 import Spinner from "./commonComponents/Spinner";
 import Item from "./Item";
-import Slider from "./Slider";
 
 function ItemList({ products }) {
   if (products === undefined) {
     return <Spinner />;
   } else {
+    
     let sportProd = products.filter((prod) => prod.category === "sport");
     let onoffProd = products.filter((prod) => prod.category === "onoff");
     let helmetProd = products.filter((prod) => prod.category === "helmets");

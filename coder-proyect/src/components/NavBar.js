@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 function NavBar() {
 
   return (
-    <div data-theme="lemonade" className='border-double border-b-2'>
+    <div data-theme="lemonade" className='static min-w-full border-double border-b-2'>
       <div class="navbar bg-base-100">
         <div class="navbar-start">
           <div class="dropdown">

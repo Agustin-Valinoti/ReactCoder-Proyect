@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import {getAllItems as getProducts, getItemByCategory, dataToFirebase} from '../data/dbase'
+import {getAllItems as getProducts, getItemByCategory} from '../data/dbase'
 
 
 function ItemListContainer() {
@@ -21,7 +21,7 @@ function ItemListContainer() {
   }, [categoryid]);
 
   return (
-    <div className="flex items-center m-auto p-4">
+    <div className="static flex items-center m-auto p-4">
       <ItemList products={products} />
     </div>
   );
