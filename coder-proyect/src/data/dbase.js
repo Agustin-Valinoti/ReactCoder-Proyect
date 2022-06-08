@@ -93,3 +93,16 @@ export async function createBuyOrder(orderData){
     
     return orderDoc ;
 }
+
+export async function getAllOrders() {
+  const myCollection = collection(fireStoreDB, "finishOrders");
+
+  const productSnap = await getDocs(myCollection);
+
+  return productSnap.docs.map((doc) => {
+    return {
+      ...doc.data(),
+      id: doc.id,
+    };
+  });
+}

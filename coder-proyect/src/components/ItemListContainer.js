@@ -21,7 +21,7 @@ function ItemListContainer() {
   }, [categoryid]);
 
   return (
-    <div className="flex place-content-center p-4">
+    <div className="flex items-center m-auto p-4">
       <ItemList products={products} />
     </div>
   );

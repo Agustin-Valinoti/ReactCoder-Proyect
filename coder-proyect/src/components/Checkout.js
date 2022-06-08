@@ -5,6 +5,7 @@ import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import useCartContext from "../store/CartContext";
 import { createBuyOrder } from "../data/dbase";
 import swal from "sweetalert";
+import { Link } from "react-router-dom";
 
 function Checkout() {
   const { cart, clearCart, getTotalPrice } = useCartContext();
@@ -38,7 +39,7 @@ function Checkout() {
         .then(
           swal(
             "Finalizado",
-            "Muchas gracias por confiar en nosotros. Podras ver el resumen de tu compra en la seccion de compras con tu DNI. Pronto recibiras un Mail para proceder con el pago.",
+            `Muchas gracias por confiar en nosotros. Podras ver el resumen de tu compra en la seccion de compras con tu DNI. Pronto recibiras un Mail para proceder con el pago.`,
             "success"
           )
         );

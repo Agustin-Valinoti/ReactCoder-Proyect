@@ -6,6 +6,7 @@ import { CCProvider } from "./store/CartContext";
 import CartPage from "./components/CartPage";
 import HomePage from "./components/HomePage";
 import Contact from "./components/Contact";
+import OrdersBuyed from "./components/OrdersBuyed";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/product/:productid" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<CartPage/>}/> 
             <Route path="/contact" element={<Contact/>}/>
+            <Route path="/orders" element={<OrdersBuyed/>}/>
           </Routes>
         </Router>
       </CCProvider>
