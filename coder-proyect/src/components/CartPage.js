@@ -6,7 +6,7 @@ import { createBuyOrder } from "../data/dbase";
 import Checkout from "./Checkout";
 
 function CartPage() {
-  const { clearCart, cart, removeFromCart, getTotalPrice } = useCartContext();
+  const { clearCart, cart, removeFromCart} = useCartContext();
 
   const cartPrint = cart.map((item) => {
     function onSubstract() {
@@ -65,7 +65,7 @@ function CartPage() {
     } 
 
     return (
-      <div data-theme="emerald">
+      <div data-theme="emerald bg-slate-600/50">
         <div>
           <ul>{cartPrint}</ul>
         </div>

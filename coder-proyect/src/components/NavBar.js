@@ -5,7 +5,7 @@ function NavBar() {
 
   return (
     <div data-theme="lemonade" className='static min-w-full border-double border-b-2'>
-      <div class="navbar bg-base-100">
+      <div class="navbar bg-neutral-100">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost btn-circle">

@@ -21,8 +21,11 @@ function ItemListContainer() {
   }, [categoryid]);
 
   return (
-    <div className="static flex items-center m-auto p-4">
-      <ItemList products={products} />
+    <div 
+    id="itemListContainer"
+    className="static flex items-center m-auto p-4 hero bg-fixed bg-center bg-cover min-h-screen "
+    >
+      <ItemList products={products} productsId={categoryid} />
     </div>
   );
 }
