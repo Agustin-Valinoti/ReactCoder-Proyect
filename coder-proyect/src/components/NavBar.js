@@ -50,7 +50,7 @@ function NavBar() {
           </div>
         </div>
         <div class="navbar-center">
-          <Link to="/" class="font-bold normal-case text-4xl box-decoration-clone bg-gradient-to-r from-lime-600 to-teal-900 text-white px-2 rounded">A.V. Motors</Link>
+          <Link to="/" class="font-bold normal-case text-4xl box-decoration-clone text-white px-2 rounded"><img className="h-8" src="https://i.ibb.co/YB9SNTB/Sin-t-tulo.png"/></Link>
         </div>
         <div class="navbar-end">
           <Link to="/cart" class="btn btn-ghost btn-circle">
